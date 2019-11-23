@@ -7,6 +7,8 @@
     <title>YourApp</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/app.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet">
+    <link href="css/toggle-switch.css" rel="stylesheet">
   </head>
 
   <body class="grid-container">
@@ -14,8 +16,8 @@
     <header class="header">
       <h1>Your<span>App</span></h1>
       <div class="bell-box">
-        <img id="bell" src="icons/icon-bell.svg" alt="bell icon">
         <div id="notifications"></div>
+        <img id="bell" src="icons/icon-bell.svg" alt="bell icon">
       </div>
       <img class="my-profile" src="images/emojon.png" alt="member photo">
       <h4>Jon Strouse</h4>
@@ -61,8 +63,7 @@
         </div>
         <div class="widget-container-full">
           <!-- element line graph will attach to -->
-          <canvas id="traffic-chart"></canvas>
-          <!-- <img src="http://placeimg.com/1000/480/tech/grayscale" alt=""> -->
+          <canvas id="traffic-chart" width="400" height="200"></canvas>
         </div>
       </section>
 
@@ -195,7 +196,7 @@
       <section class="message">
         <h3>Message User</h3>
 
-        <form class="widget-container" action="">
+        <form class="widget-container">
           <input type="text" placeholder="Search for user" class="form-field" id="userField">
           <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
           <button class="button-primary" id="send">Send</button>
@@ -221,7 +222,7 @@
       </section>
 
     </main>
-        <script type="text/javascript" src="app.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+        <script src="app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
   </body>
 </html>
