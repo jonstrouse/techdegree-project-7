@@ -12,11 +12,12 @@ body {
 }
 
 
+/* HEADER ****************************************** */
 .header {
   padding: .5em 1em 0;
   grid-area: header;
   color: white;
-  display: grid;
+  display: flex;
   grid-template-columns: 50% 15% 15% 20%;
   background-color: #6c78a6;
 }
@@ -25,6 +26,7 @@ body {
 }
 .header h1 {
   font-size: 1.5em;
+  flex-grow: 1;
 }
 #bell {
   width: 30px;
@@ -49,17 +51,25 @@ body {
   background-color: lime;
 }
 .my-profile {
-  padding-top: .5em;
+  margin-top: .5em;
   width: 40px;
   border-radius: 50%;
 }
 
 
+/* NAVIGATION ****************************************** */
 .navigation {
   grid-area: navigation;
+  display: flex;
   justify-content: center;
   width: 100%;
   background-color: #293047;
+}
+.navigation a {
+  transition: .5s ease;
+}
+.navigation a:hover {
+  background-color: slategrey;
 }
 .navigation img {
   width: 35px;
@@ -67,11 +77,12 @@ body {
   margin: auto;
 }
 
-/* ****************************************** */
-
+/* MAIN CONTENT ****************************************** */
 .main {
   grid-area: main;
   display: grid;
+  width: 90%;
+  margin: auto;
 }
 
 .main-header {
@@ -81,7 +92,8 @@ body {
   justify-content: end;
 }
 .main-header-search input {
-  width: 100%;
+  width: 70%;
+  float: right;
 }
 
 .alert {
@@ -118,7 +130,7 @@ body {
 .members-container img {
   border-radius: 50%;
   width: 70px;
-  padding-right: 1em;
+  margin-right: 1em;
 }
 
 .members-container {
@@ -153,9 +165,9 @@ select {
 .widget-container-full, .widget-container-half {
   width: 95vw;
 }
- .widget-container-full img {
-   width: 100%;
- }
+
+
+
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: 55px 1fr;
@@ -187,10 +199,6 @@ select {
   .widget-container-half {
     width: 45vw;
   }
-}
-
-@media and screen (min-width: 768px) {
-
 }
 
 @media and screen (min-width: 1024px) {
