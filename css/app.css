@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
   box-sizing: border-box;
 }
-.grid-conatainer {
+.grid-container {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
@@ -107,7 +107,6 @@ select {
 .main {
   grid-area: main;
   display: grid;
-  width: 100vw;
 }
 .traffic,
 .daily,
@@ -191,7 +190,7 @@ select {
 }
 
 .social {
-  width: 100%;
+  /* width: 100%; */
   margin: 1em 0;
   padding: 1em 0;
   background-color: lavender;
@@ -362,6 +361,7 @@ select {
 
 #save,
 #cancel {
+  height: 65px;
   margin: 1.5em 0 3em;
   padding: 1em 0;
   width: 49%;
@@ -379,40 +379,81 @@ select {
 
 
 /* Media Queries ****************************************** */
+
 @media (min-width: 768px) {
+
   .grid-container {
-    grid-template-columns: 55px 1fr;
-    grid-template-areas:
-      "header" "header"
-      "navigation" "main";
+    width: 100vw;
+    grid-template-columns: 60px 1fr;
+    grid-template-areas:  "header header"
+                          "navigation" "main";
   }
 
+  .header {
+    grid-column: 1 /span 2;
+  }
   .navigation {
-    display: grid;
-    grid-column: 1 / span 1;
-    width: 10vw;
+    display: inline;
+    grid-column: 1 /span 1;
+    grid-row: 2 /span 2;
+    width: 60px;
+    height: 100%;
   }
-
+  .alert {
+    max-width: 680px;
+    margin-left: 1.5em;
+  }
   .main {
+    grid-column: 2 /span 2;
+    grid-row: 2 /span 2;
     grid-template-columns: 50%;
-
   }
-  .traffic,
-  .social {
-    grid-column: 1 / span 2;
+  .main-header {
+    grid-column: 1 /span 2;
   }
-
+  .traffic {
+    grid-column: 1 /span 2;
+  }
   .daily,
   .members,
   .message {
-    grid-column: 1 / span 1;
+    grid-column: 1 /span 1;
+  }
+  .mobile,
+  .activity,
+  .settings {
+    grid-column: 2 /span 1;
   }
 
   .widget-container-full {
-    width: 50vw;
+    width: 90vw;
   }
   .widget-container-half {
     width: 45vw;
   }
+  .social-container {
+    margin: 1em auto;
 
+    display: grid;
+    grid-auto-flow: column;
+    grid-column: 1 /span 2;
+    max-width: 740px;
+  }
+  .social {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 50% 50%;
+  }
+  .social-image {
+    width: 20px;
+    height: 20px;
+  }
+  .social-text p:first-child {
+    font-size: 1em;
+    margin: .5em auto 0;
+  }
+  .social-text p:last-child {
+    font-size: 2em;
+    margin: .2em auto 0;
+  }
 }
