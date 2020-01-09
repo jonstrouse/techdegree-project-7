@@ -1,16 +1,16 @@
-const alert = document.getElementById('alert');
+const appAlert = document.getElementById('alert');
 
-alert.innerHTML =
+appAlert.innerHTML =
   `
   <div class="alert-banner">
         <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
   <p class="alert-banner-close">X</p> </div>
   `
 
-alert.addEventListener('click', (event) => {
+appAlert.addEventListener('click', (event) => {
   console.log(event.target);
   if (event.target.class = "alert-banner-close") {
-    alert.style.display = "none";
+    appAlert.style.display = "none";
   }
 });
 
@@ -113,10 +113,10 @@ const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
-send.addEventListener('click', () => {
+send.addEventListener('click', (event) => {
   if (user.value === "" && message.value === "") {
     alert("Please fill out user and message fields before sending");
-  } else if (user.vaule === "") {
+  } else if (user.value === "") {
     alert("Please fill our user field before sending");
   } else if (message.value === "") {
     alert("Please fill out message field before sending");
